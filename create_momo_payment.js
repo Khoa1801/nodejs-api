@@ -3,7 +3,7 @@ const router = express.Router();
 const crypto = require("crypto");
 const axios = require("axios");
 const db = require("./index");
-const sendOrderConfirmationEmail = require("../src/component/SendMailMomo");
+// const sendOrderConfirmationEmail = require("../src/component/SendMailMomo");
 
 // Tạo thanh toán MoMo
 router.post("/create_momo_payment", async (req, res) => {
