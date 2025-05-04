@@ -59,11 +59,11 @@ const storage = multer.diskStorage({
   
 
 
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'bangiay2'
+  const db = mysql.createConnection({
+    host: 'sql109.infinityfree.com',
+    user: 'if0_38893662',
+    password: 'VoDangKhoa1801', // ← thay bằng mật khẩu đăng nhập vào InfinityFree
+    database: 'if0_38893662_bangiay'
 });
 
 db.query = util.promisify(db.query);
