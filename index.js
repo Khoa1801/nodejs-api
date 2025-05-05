@@ -66,7 +66,7 @@ const db = mysql.createConnection({
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DBNAME
   });
-  
+
 db.connect(err => {
     if (err) {
         console.error('Database connection failed: ' + err.stack);
@@ -337,11 +337,6 @@ app.post("/lien_he", upload.single("image"), (req, res) => {
     res.send('Trang đăng nhập');
 });
 
-// Catch-all route: React entry point
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "build", "index.html"));
-  });
-  
 
  
 app.post('/login', (req, res) => {
