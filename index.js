@@ -18,7 +18,7 @@ const vnpayRoute = require("./vnpay"); // hoặc ./routes/vnpay
 const paymentZaloRouter = require("./paymentZaloRouter");
 const path = require("path");
 const momoRouter = require("./create_momo_payment");
-require("dotenv").config({ path: "../.env" });  // Chỉ định đường dẫn đến .env
+require("dotenv").config({ path: path.join(__dirname, "../.env") });
 const allowedOrigins = [
     "http://localhost:3500",
     'https://your-react-app.onrender.com',
