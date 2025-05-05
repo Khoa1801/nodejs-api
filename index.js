@@ -58,15 +58,15 @@ const storage = multer.diskStorage({
   const upload = multer({ storage });
   
 
-
-  const db = mysql.createConnection({
-    host: 'localhost',   // ✅ Đúng host
-    port: 3306,          // ✅ Đúng port (nếu bạn muốn chỉ rõ)
-    user: 'root',
-    password: '',
-    database: 'bangiay2'
+// Tạo kết nối
+const connection = mysql.createConnection({
+    host: 'bbl7wag8d9loxcmbtb3d-mysql.services.clever-cloud.com',
+    port: 20490,
+    user: 'uvu4wz7tbb6gljye',
+    password: 'qq796JYytJ681x8BDK60', // Thay bằng password thực của bạn
+    database: 'bbl7wag8d9loxcmbtb3d'
   });
-
+  
 db.query = util.promisify(db.query);
 
 db.connect(err => {
