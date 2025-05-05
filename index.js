@@ -2,7 +2,7 @@ const express = require('express');
 const mysql = require('mysql');
 const app = express();
 const nodemailer = require ('nodemailer');
-const port = process.env.DB_PORT 
+const port = 20490
 const fs = require("fs");
 const multer = require("multer");
 const bcrypt = require('bcryptjs');
@@ -78,7 +78,7 @@ db.connect((err) => {
   });
 // Lấy giá trị các biến môi trường từ .env
 const DB_HOST = process.env.DB_HOST;
-const DB_PORT = process.env.DB_PORT;
+const DB_PORT = 20490;
 const DB_USERNAME = process.env.DB_USERNAME;
 const DB_PASSWORD = process.env.DB_PASSWORD;
 const DB_DBNAME = process.env.DB_DBNAME;
