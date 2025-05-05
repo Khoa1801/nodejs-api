@@ -67,14 +67,28 @@ const db = mysql.createConnection({
     database: process.env.DB_DBNAME
   });
 
-db.connect(err => {
+// Kiểm tra kết nối
+db.connect((err) => {
     if (err) {
-        console.error('Database connection failed: ' + err.stack);
-        return;
+      console.error("Lỗi kết nối tới cơ sở dữ liệu:", err.message);
+    } else {
+      console.log("Kết nối tới cơ sở dữ liệu thành công!");
     }
-    console.log('Connected to database.');
-});
+    connection.end();  // Đóng kết nối sau khi kiểm tra
+  });
+// Lấy giá trị các biến môi trường từ .env
+const DB_HOST = process.env.DB_HOST;
+const DB_PORT = process.env.DB_PORT;
+const DB_USERNAME = process.env.DB_USERNAME;
+const DB_PASSWORD = process.env.DB_PASSWORD;
+const DB_DBNAME = process.env.DB_DBNAME;
 
+// Kiểm tra và in ra các giá trị của biến môi trường
+console.log("DB_HOST:", DB_HOST);
+console.log("DB_PORT:", DB_PORT);
+console.log("DB_USERNAME:", DB_USERNAME);
+console.log("DB_PASSWORD:", DB_PASSWORD);
+console.log("DB_DBNAME:", DB_DBNAME);
 
 
 // const vnp_TmnCode = "IVQS5CJ5";
