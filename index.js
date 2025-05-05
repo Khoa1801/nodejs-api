@@ -61,7 +61,7 @@ const storage = multer.diskStorage({
 // Sử dụng biến môi trường (được cấu hình trong Render)
 const db = mysql.createConnection({
     host: process.env.DB_HOST,       // Ví dụ: bbl7wag8d9loxcmbtb3d-mysql.services.clever-cloud.com
-    port: process.env.DB_PORT || 3306, // Nếu bạn dùng cổng mặc định thì có thể không cần
+    port: process.env.DB_PORT, // Nếu bạn dùng cổng mặc định thì có thể không cần
     user: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DBNAME
