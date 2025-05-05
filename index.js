@@ -58,17 +58,15 @@ const storage = multer.diskStorage({
   const upload = multer({ storage });
   
 
-// Tạo kết nối
+// Sử dụng biến môi trường (được cấu hình trong Render)
 const db = mysql.createConnection({
-    host: 'bbl7wag8d9loxcmbtb3d-mysql.services.clever-cloud.com',
-    port: 20490,
-    user: 'uvu4wz7tbb6gljye',
-    password: 'qq796JYytJ681x8BDK60', // Thay bằng password thực của bạn
-    database: 'bbl7wag8d9loxcmbtb3d'
+    host: process.env.DB_HOST,       // Ví dụ: bbl7wag8d9loxcmbtb3d-mysql.services.clever-cloud.com
+    port: process.env.DB_PORT || 3306, // Nếu bạn dùng cổng mặc định thì có thể không cần
+    user: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DBNAME
   });
-
-db.query = util.promisify(db.query);
-
+  
 db.connect(err => {
     if (err) {
         console.error('Database connection failed: ' + err.stack);
